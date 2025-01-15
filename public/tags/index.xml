@@ -2,10 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on hwan001`s blog</title>
-    <link>https://hwan001.github.io/blog/tags/</link>
+    <link>http://localhost:1313/blog/tags/</link>
     <description>Recent content in Tags on hwan001`s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://hwan001.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Jan 2025 12:19:30 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docs</title>
+      <link>http://localhost:1313/blog/tags/docs/</link>
+      <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
+      <guid>http://localhost:1313/blog/tags/docs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>First</title>
+      <link>http://localhost:1313/blog/tags/first/</link>
+      <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
+      <guid>http://localhost:1313/blog/tags/first/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Posts</title>
+      <link>http://localhost:1313/blog/tags/posts/</link>
+      <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
+      <guid>http://localhost:1313/blog/tags/posts/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

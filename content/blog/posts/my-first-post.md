@@ -1,7 +1,9 @@
 +++
-title = 'My First Post'
+title = 'my-first-post'
 date = 2025-01-15T12:19:30+09:00
 draft = true
+categories = ['blog']
+tags= ["posts", "first"]
 +++
 
 

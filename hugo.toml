@@ -1,4 +1,4 @@
-baseURL = 'https://hwan001.github.io/blog'
+baseURL = 'https://hwan001.github.io/'
 languageCode = 'en-us'
 title = 'hwan001`s blog'
-theme = 'digitalgarden'
+theme = 'ananke'

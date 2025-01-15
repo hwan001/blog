@@ -4,3 +4,9 @@
 [submodule "themes/digitalgarden"]
 	path = themes/digitalgarden
 	url = https://github.com/apvarun/digital-garden-hugo-theme.git
+[submodule "themes/hugo-book"]
+	path = themes/hugo-book
+	url = https://github.com/alex-shpak/hugo-book
+[submodule "themes/github-style"]
+	path = themes/github-style
+	url = https://github.com/MeiK2333/github-style.git
