@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on hwan001`s blog</title>
+    <link>https://hwan001.github.io/blog/blog/</link>
+    <description>Recent content in Blogs on hwan001`s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://hwan001.github.io/blog/blog/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
