@@ -1,4 +1,111 @@
-baseURL = 'https://hwan001.github.io/'
+baseURL = 'https://hwan001.github.io'
 languageCode = 'en-us'
-title = 'hwan001`s blog'
-theme = 'ananke'
+title = 'hwan001'
+theme = 'digitalgarden'
+
+# googleAnalytics = "UA-PROPERTY_ID"
+
+[Params]
+  description = "My Digital Garden on the Internet"
+  images = ['/digital-garden-logo.png']
+  enableSearch = true
+
+[Params.newsletter]
+  title = ""
+  description = "A curated weekly digest once a week to your mailbox"
+
+  # Supports buttondown, substack and revue
+  provider = "buttondown"
+
+  # Buttondown - URL from share page; Refer: https://blog.buttondown.email/2019/10/11/adding-a-buttondown-subscription-form-to-webflow#getting-your-subscription-url
+  # Substack - URL of the newsletter homepage; Example: https://on.substack.com/
+  # Revue - Username
+  path = "https://buttondown.email/api/emails/embed-subscribe/"
+
+[menu]
+[[menu.main]]
+  name = 'Home'
+  url = '/'
+  weight = 1
+[[menu.main]] 
+  name = 'Content'
+  params.header = true
+  weight = 2
+[[menu.main]]
+  name = 'Article'
+  url = '/article'
+  weight = 3
+[[menu.main]]
+  name = 'Portfolio'
+  url = '/portfolio'
+  weight = 4
+[[menu.main]]
+  name = 'Posts'
+  url = '/posts'
+  weight = 4
+[[menu.main]]
+  name = 'Projects'
+  params.header = true
+  weight = 5
+[[menu.main]]
+  name = 'Starsinflation'
+  url = 'https://starsinflation.xyz'
+  weight = 6
+[[menu.main]]
+  name = 'Team'
+  params.header = true
+  weight = 7
+[[menu.main]]
+  name = 'Proxmox'
+  url = 'https://pve.666lab.org'
+  weight = 8
+[[menu.main]]
+  name = 'Pluto'
+  url = 'https://pluto.666lab.org'
+  weight = 9
+
+# [[menu.social]]
+#   name = 'Twitter'
+#   url = 'https://twitter.com'
+#   weight = 1
+[[menu.social]]
+  name = 'GitHub'
+  url = 'https://github.com/hwan001'
+  weight = 2
+[[menu.social]]
+  name = 'LinkedIn'
+  url = 'https://linkedin.com'
+  weight = 3
+[[menu.social]]
+  name = 'Instagram'
+  url = 'https://instagram.com'
+  weight = 4
+# [[menu.social]]
+#   name = 'Dribbble'
+#   url = 'https://dribbble.com'
+#   weight = 5
+# [[menu.social]]
+#   name = 'Codepen'
+#   url = 'https://codepen.io'
+#   weight = 6
+# [[menu.social]]
+#   name = 'Twitch'
+#   url = 'https://twitch.com'
+#   weight = 7
+[[menu.social]]
+  name = 'Email'
+  # url = 'mailto:user@example.org'
+  weight = 8
+[[menu.social]]
+  name = 'RSS'
+  url = '/blog/index.xml'
+  weight = 9
+
+
+# syntax highlight settings
+[markup]
+  [markup.highlight]
+    style = "dracula"
+  [markup.goldmark.renderer]
+    # Enable to include inline HTML
+    unsafe = true

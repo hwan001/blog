@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on hwan001`s blog</title>
-    <link>http://localhost:1313/blog/blog/</link>
-    <description>Recent content in Blogs on hwan001`s blog</description>
+    <title>blog on hwan001</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in blog on hwan001</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jan 2025 12:19:30 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>my-first-post</title>
-      <link>http://localhost:1313/blog/blog/posts/my-first-post/</link>
-      <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
-      <guid>http://localhost:1313/blog/blog/posts/my-first-post/</guid>
-      <description>&lt;p&gt;test test&lt;/p&gt;&#xA;&lt;h3 id=&#34;test&#34;&gt;test&lt;/h3&gt;&#xA;&lt;h1 id=&#34;test-1&#34;&gt;test&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;test-32&#34;&gt;test 32&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1234&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1234&#xA;&lt;ul&gt;&#xA;&lt;li&gt;5678&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;23&lt;/li&gt;&#xA;&lt;li&gt;333&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
-    </item>
-    <item>
-      <title>title1</title>
-      <link>http://localhost:1313/blog/blog/docs/test1/</link>
-      <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
-      <guid>http://localhost:1313/blog/blog/docs/test1/</guid>
-      <description>&lt;h1 id=&#34;head1&#34;&gt;head1&lt;/h1&gt;&#xA;&lt;h2 id=&#34;head2&#34;&gt;head2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;haed3&#34;&gt;haed3&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;contents1&lt;/li&gt;&#xA;&lt;li&gt;contents2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;</description>
-    </item>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hwan001`s blog</title>
-    <link>http://localhost:1313/blog/</link>
-    <description>Recent content on hwan001`s blog</description>
+    <title>Home on hwan001</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on hwan001</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Jan 2025 12:19:30 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>my-first-post</title>
-      <link>http://localhost:1313/blog/blog/posts/my-first-post/</link>
+      <title>1. article</title>
+      <link>http://localhost:1313/article/1_article/</link>
       <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
-      <guid>http://localhost:1313/blog/blog/posts/my-first-post/</guid>
-      <description>&lt;p&gt;test test&lt;/p&gt;&#xA;&lt;h3 id=&#34;test&#34;&gt;test&lt;/h3&gt;&#xA;&lt;h1 id=&#34;test-1&#34;&gt;test&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;test-32&#34;&gt;test 32&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1234&#xA;&lt;ul&gt;&#xA;&lt;li&gt;1234&#xA;&lt;ul&gt;&#xA;&lt;li&gt;5678&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;23&lt;/li&gt;&#xA;&lt;li&gt;333&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+      <guid>http://localhost:1313/article/1_article/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;head1&#34;&gt;head1&lt;/h1&gt;&#xA;&lt;h2 id=&#34;head2&#34;&gt;head2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;haed3&#34;&gt;haed3&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;contents1&lt;/li&gt;&#xA;&lt;li&gt;contents2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;</description>
     </item>
     <item>
-      <title>title1</title>
-      <link>http://localhost:1313/blog/blog/docs/test1/</link>
+      <title>2. article</title>
+      <link>http://localhost:1313/article/2_article/</link>
       <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
-      <guid>http://localhost:1313/blog/blog/docs/test1/</guid>
-      <description>&lt;h1 id=&#34;head1&#34;&gt;head1&lt;/h1&gt;&#xA;&lt;h2 id=&#34;head2&#34;&gt;head2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;haed3&#34;&gt;haed3&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;contents1&lt;/li&gt;&#xA;&lt;li&gt;contents2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;</description>
+      <guid>http://localhost:1313/article/2_article/</guid>
+      <description>&lt;h2 id=&#34;test&#34;&gt;test&lt;/h2&gt;&#xA;&lt;h1 id=&#34;head1&#34;&gt;head1&lt;/h1&gt;&#xA;&lt;h2 id=&#34;head2&#34;&gt;head2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;haed3&#34;&gt;haed3&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;contents1&lt;/li&gt;&#xA;&lt;li&gt;contents2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;</description>
+    </item>
+    <item>
+      <title>3. article</title>
+      <link>http://localhost:1313/article/3_article/</link>
+      <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
+      <guid>http://localhost:1313/article/3_article/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;head1&#34;&gt;head1&lt;/h1&gt;&#xA;&lt;h2 id=&#34;head2&#34;&gt;head2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;haed3&#34;&gt;haed3&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;contents1&lt;/li&gt;&#xA;&lt;li&gt;contents2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;</description>
+    </item>
+    <item>
+      <title>Pluto</title>
+      <link>http://localhost:1313/portfolio/pluto/</link>
+      <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
+      <guid>http://localhost:1313/portfolio/pluto/</guid>
+      <description>&lt;h1 id=&#34;project-pluto&#34;&gt;Project Pluto&lt;/h1&gt;&#xA;&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;&#xA;&lt;h2 id=&#34;구성&#34;&gt;구성&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>StarsInflation</title>
+      <link>http://localhost:1313/portfolio/starsinflation/</link>
+      <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
+      <guid>http://localhost:1313/portfolio/starsinflation/</guid>
+      <description>&lt;h1 id=&#34;project-starsinflation&#34;&gt;Project StarsInflation&lt;/h1&gt;&#xA;&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;&#xA;&lt;h2 id=&#34;구성&#34;&gt;구성&lt;/h2&gt;</description>
     </item>
   </channel>
 </rss>
