@@ -6,6 +6,14 @@
     <description>Recent content in Tags on hwan001</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 18 Jan 2025 16:14:55 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Sat, 18 Jan 2025 16:14:55 +0900</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

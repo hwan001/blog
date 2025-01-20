@@ -6,42 +6,56 @@
     <description>Recent content in Home on hwan001</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jan 2025 12:19:30 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2025 16:27:43 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>1. article</title>
+      <title>ts, tsx, js, jsx 확장자 차이</title>
+      <link>http://localhost:1313/nextjs/tstsxjsjsx-%ED%99%95%EC%9E%A5%EC%9E%90-%EC%B0%A8%EC%9D%B4/</link>
+      <pubDate>Mon, 20 Jan 2025 16:27:43 +0900</pubDate>
+      <guid>http://localhost:1313/nextjs/tstsxjsjsx-%ED%99%95%EC%9E%A5%EC%9E%90-%EC%B0%A8%EC%9D%B4/</guid>
+      <description>&lt;p&gt;Next.js에서 JavaScript와 TypeScript의 확장자인 .js, .jsx, .ts, .tsx는 파일 내용과 용도에 따라 구분됩니다.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;.js (JavaScript 파일)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;용도: 기본 JavaScript 파일.&lt;/li&gt;&#xA;&lt;li&gt;특징:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;순수 JavaScript 코드만 포함.&lt;/li&gt;&#xA;&lt;li&gt;TypeScript 타입 검사나 JSX 문법을 지원하지 않음.&lt;/li&gt;&#xA;&lt;li&gt;일반적으로 Next.js의 설정 파일(next.config.js 등)이나 유틸리티 파일로 사용.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;예제:&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt; add(a, b) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; a &lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt; b;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module.exports &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; add;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;.jsx (JavaScript + JSX 파일)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;용도: JavaScript 코드에서 JSX 문법을 사용하는 경우.&lt;/li&gt;&#xA;&lt;li&gt;특징:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;React 컴포넌트를 작성할 때 주로 사용.&lt;/li&gt;&#xA;&lt;li&gt;JSX 문법( &lt;code&gt;&amp;lt;div&amp;gt; Hello &amp;lt;/div&amp;gt;&lt;/code&gt; )을 포함할 수 있음.&lt;/li&gt;&#xA;&lt;li&gt;TypeScript 타입 검사를 지원하지 않음.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;예제:&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt; Component() {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;h1&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt;Hello, JSX&lt;span style=&#34;color:#ff79c6&#34;&gt;!&amp;lt;&lt;/span&gt;/h1&amp;gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;.ts (TypeScript 파일)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;용도: TypeScript를 사용하는 순수 스크립트 파일.&lt;/li&gt;&#xA;&lt;li&gt;특징:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;JavaScript의 상위 집합인 TypeScript 코드를 작성할 때 사용.&lt;/li&gt;&#xA;&lt;li&gt;타입 검사 및 정적 타입 시스템을 지원.&lt;/li&gt;&#xA;&lt;li&gt;JSX 문법을 사용할 수 없음.&lt;/li&gt;&#xA;&lt;li&gt;주로 유틸리티 함수, API 함수, 또는 타입 정의 파일로 사용.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;예제:&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ts&#34; data-lang=&#34;ts&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;type&lt;/span&gt; User &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  id: &lt;span style=&#34;color:#8be9fd&#34;&gt;number&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  name: &lt;span style=&#34;color:#8be9fd&#34;&gt;string&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt; greet(user: &lt;span style=&#34;color:#8be9fd&#34;&gt;User&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#8be9fd&#34;&gt;string&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;`Hello, &lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;${&lt;/span&gt;user.name&lt;span style=&#34;color:#f1fa8c&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;`&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;default&lt;/span&gt; greet;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;4&#34;&gt;&#xA;&lt;li&gt;.tsx (TypeScript + JSX 파일)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;용도: TypeScript와 JSX 문법을 사용하는 경우.&lt;/li&gt;&#xA;&lt;li&gt;특징:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;React 컴포넌트를 작성하면서 TypeScript의 타입 검사 기능을 활용.&lt;/li&gt;&#xA;&lt;li&gt;JSX 문법(&lt;code&gt;&amp;lt;div&amp;gt;Hello&amp;lt;/div&amp;gt;&lt;/code&gt;)과 함께 타입을 명시할 수 있음.&lt;/li&gt;&#xA;&lt;li&gt;Next.js에서 TypeScript 기반의 컴포넌트를 작성할 때 주로 사용.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;예제:&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-tsx&#34; data-lang=&#34;tsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;type&lt;/span&gt; Props &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  message: &lt;span style=&#34;color:#8be9fd&#34;&gt;string&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt; Component({ message }&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt; Props) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;h1&lt;/span&gt;&amp;gt;{message}&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;h1&lt;/span&gt;&amp;gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;파일 확장자 비교 요약&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Styled Components</title>
+      <link>http://localhost:1313/nextjs/styled-components/</link>
+      <pubDate>Mon, 20 Jan 2025 16:14:47 +0900</pubDate>
+      <guid>http://localhost:1313/nextjs/styled-components/</guid>
+      <description>&lt;p&gt;아래는 Next.js에서 Styled Components를 사용하는 간단한 예제입니다. Styled Components는 CSS-in-JS 라이브러리로, 스타일을 컴포넌트 내부에 작성할 수 있습니다.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Styled Components 설치&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;먼저 Styled Components와 Babel 플러그인을 설치해야 합니다.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install styled-components&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install --save-dev babel-plugin-styled-components&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;.babelrc 파일 설정&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Styled Components를 제대로 사용하려면 Babel 설정을 추가해야 합니다. Next.js 프로젝트에 .babelrc 파일을 생성하고 다음과 같이 설정합니다.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;presets&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;next/babel&amp;#34;&lt;/span&gt;],&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;plugins&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;babel-plugin-styled-components&amp;#34;&lt;/span&gt;]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;기본 사용 예제&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;아래는 Styled Components를 사용해 Next.js에서 간단한 버튼 컴포넌트를 작성하고 사용하는 방법입니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>next-i18next로 다국어 지원하기</title>
+      <link>http://localhost:1313/nextjs/next-i18next/</link>
+      <pubDate>Mon, 20 Jan 2025 15:00:18 +0900</pubDate>
+      <guid>http://localhost:1313/nextjs/next-i18next/</guid>
+      <description>&lt;p&gt;Next.js에서 next-i18next를 사용하여 다국어 지원을 구현하는 방법과 효율적인 프로젝트 구조를 아래에 설명합니다.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;next-i18next 설치&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install next-i18next react-i18next i18next&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;프로젝트 구조&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;다국어 지원을 위해 프로젝트 구조를 다음과 같이 설정하는 것이 효율적입니다:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;my-project/&#xA;├── public/&#xA;│   └── locales/&#xA;│       ├── en/&#xA;│       │   ├── common.json&#xA;│       │   ├── home.json&#xA;│       ├── ko/&#xA;│       │   ├── common.json&#xA;│       │   ├── home.json&#xA;├── src/&#xA;│   ├── components/&#xA;│   │   └── Header.js&#xA;│   ├── pages/&#xA;│   │   ├── index.js&#xA;│   │   ├── about.js&#xA;│   ├── i18n.js&#xA;│   ├── _app.js&#xA;│   ├── next-i18next.config.js&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;next-i18next 설정&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DevDock</title>
+      <link>http://localhost:1313/project/devdock/</link>
+      <pubDate>Sat, 18 Jan 2025 16:16:35 +0900</pubDate>
+      <guid>http://localhost:1313/project/devdock/</guid>
+      <description>&lt;h1 id=&#34;devdock&#34;&gt;DevDock&lt;/h1&gt;</description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/post/python/</link>
+      <pubDate>Sat, 18 Jan 2025 16:14:55 +0900</pubDate>
+      <guid>http://localhost:1313/post/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>post</title>
       <link>http://localhost:1313/article/1_article/</link>
       <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
       <guid>http://localhost:1313/article/1_article/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;head1&#34;&gt;head1&lt;/h1&gt;&#xA;&lt;h2 id=&#34;head2&#34;&gt;head2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;haed3&#34;&gt;haed3&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;contents1&lt;/li&gt;&#xA;&lt;li&gt;contents2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;</description>
-    </item>
-    <item>
-      <title>2. article</title>
-      <link>http://localhost:1313/article/2_article/</link>
-      <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
-      <guid>http://localhost:1313/article/2_article/</guid>
-      <description>&lt;h2 id=&#34;test&#34;&gt;test&lt;/h2&gt;&#xA;&lt;h1 id=&#34;head1&#34;&gt;head1&lt;/h1&gt;&#xA;&lt;h2 id=&#34;head2&#34;&gt;head2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;haed3&#34;&gt;haed3&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;contents1&lt;/li&gt;&#xA;&lt;li&gt;contents2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;</description>
-    </item>
-    <item>
-      <title>3. article</title>
-      <link>http://localhost:1313/article/3_article/</link>
-      <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
-      <guid>http://localhost:1313/article/3_article/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;head1&#34;&gt;head1&lt;/h1&gt;&#xA;&lt;h2 id=&#34;head2&#34;&gt;head2&lt;/h2&gt;&#xA;&lt;h3 id=&#34;haed3&#34;&gt;haed3&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;contents1&lt;/li&gt;&#xA;&lt;li&gt;contents2&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;</description>
-    </item>
-    <item>
-      <title>Pluto</title>
-      <link>http://localhost:1313/portfolio/pluto/</link>
-      <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
-      <guid>http://localhost:1313/portfolio/pluto/</guid>
-      <description>&lt;h1 id=&#34;project-pluto&#34;&gt;Project Pluto&lt;/h1&gt;&#xA;&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;&#xA;&lt;h2 id=&#34;구성&#34;&gt;구성&lt;/h2&gt;</description>
+      <description>&lt;hr&gt;</description>
     </item>
     <item>
       <title>StarsInflation</title>
-      <link>http://localhost:1313/portfolio/starsinflation/</link>
+      <link>http://localhost:1313/project/starsinflation/</link>
       <pubDate>Wed, 15 Jan 2025 12:19:30 +0900</pubDate>
-      <guid>http://localhost:1313/portfolio/starsinflation/</guid>
-      <description>&lt;h1 id=&#34;project-starsinflation&#34;&gt;Project StarsInflation&lt;/h1&gt;&#xA;&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;&#xA;&lt;h2 id=&#34;구성&#34;&gt;구성&lt;/h2&gt;</description>
+      <guid>http://localhost:1313/project/starsinflation/</guid>
+      <description>&lt;h1 id=&#34;starsinflation&#34;&gt;StarsInflation&lt;/h1&gt;</description>
     </item>
   </channel>
 </rss>

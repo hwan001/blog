@@ -6,21 +6,22 @@ theme = 'digitalgarden'
 # googleAnalytics = "UA-PROPERTY_ID"
 
 [Params]
-  description = "My Digital Garden on the Internet"
-  images = ['/digital-garden-logo.png']
+  description = "hwan001`s blog"
+  favicon = "/images/favicon.ico"
+  images = ['/images/main-logo.png']
   enableSearch = true
 
-[Params.newsletter]
-  title = ""
-  description = "A curated weekly digest once a week to your mailbox"
-
-  # Supports buttondown, substack and revue
-  provider = "buttondown"
-
-  # Buttondown - URL from share page; Refer: https://blog.buttondown.email/2019/10/11/adding-a-buttondown-subscription-form-to-webflow#getting-your-subscription-url
-  # Substack - URL of the newsletter homepage; Example: https://on.substack.com/
-  # Revue - Username
-  path = "https://buttondown.email/api/emails/embed-subscribe/"
+# [Params.newsletter]
+#   title = ""
+#   description = "A curated weekly digest once a week to your mailbox"
+# 
+#   # Supports buttondown, substack and revue
+#   provider = "buttondown"
+# 
+#   # Buttondown - URL from share page; Refer: https://blog.buttondown.email/2019/10/11/adding-a-buttondown-subscription-form-to-webflow#getting-your-subscription-url
+#   # Substack - URL of the newsletter homepage; Example: https://on.substack.com/
+#   # Revue - Username
+#   path = "https://buttondown.email/api/emails/embed-subscribe/"
 
 [menu]
 [[menu.main]]
@@ -28,40 +29,36 @@ theme = 'digitalgarden'
   url = '/'
   weight = 1
 [[menu.main]] 
-  name = 'Content'
+  name = 'Categories'
   params.header = true
   weight = 2
 [[menu.main]]
-  name = 'Article'
-  url = '/article'
+  name = 'NextJS'
+  url = '/nextjs'
   weight = 3
 [[menu.main]]
-  name = 'Portfolio'
-  url = '/portfolio'
+  name = 'Post'
+  url = '/post'
   weight = 4
 [[menu.main]]
-  name = 'Posts'
-  url = '/posts'
-  weight = 4
+  name = 'Project'
+  url = '/project'
+  weight = 5
 [[menu.main]]
   name = 'Projects'
   params.header = true
-  weight = 5
+  weight = 6
 [[menu.main]]
   name = 'Starsinflation'
   url = 'https://starsinflation.xyz'
-  weight = 6
+  weight = 7
 [[menu.main]]
   name = 'Team'
   params.header = true
-  weight = 7
-[[menu.main]]
-  name = 'Proxmox'
-  url = 'https://pve.666lab.org'
   weight = 8
 [[menu.main]]
-  name = 'Pluto'
-  url = 'https://pluto.666lab.org'
+  name = '666lab'
+  url = 'https://666lab.github.io'
   weight = 9
 
 # [[menu.social]]
@@ -76,10 +73,10 @@ theme = 'digitalgarden'
   name = 'LinkedIn'
   url = 'https://linkedin.com'
   weight = 3
-[[menu.social]]
-  name = 'Instagram'
-  url = 'https://instagram.com'
-  weight = 4
+# [[menu.social]]
+#   name = 'Instagram'
+#   url = 'https://instagram.com'
+#   weight = 4
 # [[menu.social]]
 #   name = 'Dribbble'
 #   url = 'https://dribbble.com'
