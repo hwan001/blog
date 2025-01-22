@@ -11,6 +11,10 @@ theme = 'digitalgarden'
   images = ['/images/main-logo.png']
   enableSearch = true
 
+[Params.youtubeplayer]
+  title = "Youtube"
+  # description = "Play youtube videos"
+
 # [Params.newsletter]
 #   title = ""
 #   description = "A curated weekly digest once a week to your mailbox"
@@ -39,6 +43,10 @@ theme = 'digitalgarden'
 [[menu.main]]
   name = 'Post'
   url = '/post'
+  weight = 4
+[[menu.main]]
+  name = 'Python'
+  url = '/python'
   weight = 4
 [[menu.main]]
   name = 'Project'

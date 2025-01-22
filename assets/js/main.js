@@ -50,6 +50,5 @@ darkModeToggle.addEventListener('click', () => {
   } else {
     document.documentElement.classList.add('dark');
     localStorage.setItem(darkModeStateKey, true)
-
   }
 })

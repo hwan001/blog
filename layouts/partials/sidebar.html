@@ -38,6 +38,10 @@
   {{- partial "newsletter-widget.html" . -}}
   {{ end }}
 
+  {{ if .Site.Params.youtubeplayer }}
+  {{- partial "youtube-widget.html" . -}}
+  {{ end }}
+
   <ul class="list-none flex flex-wrap justify-center gap-1 pt-2 border-t border-slate-200 dark:border-slate-600">
     {{ range .Site.Menus.social }}
     <li>

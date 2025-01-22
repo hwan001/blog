@@ -1,0 +1,164 @@
+{{ $built := resources.Get "js/youtube-widget.js" | js.Build "youtube-widget.js" }}
+
+<div class="youtube-widget border-t">
+    <div class="text-bold text-sm gap-1 p-1 youtube-title">
+        {{ if .Site.Params.youtubeplayer.title }}
+            {{ .Site.Params.youtubeplayer.title }}
+        {{ end }}
+    </div>
+    {{ with .Site.Params.youtubeplayer.description }}
+        <p class="text-xs my-1 text-slate-500 youtube-description">{{ . }}</p>
+    {{ end }}
+
+    <!-- Input Field -->
+    <div class="widget-input">
+        <input
+            id="youtube-id"
+            type="text"
+            class="input-field"
+            placeholder="Enter YouTube Video ID (e.g., jNQXAC9IVRw)"
+            aria-label="YouTube Video ID Input"
+        />
+    </div>
+
+    <!-- YouTube Player -->
+    <div class="widget-player">
+        <iframe
+            id="youtube-player"
+            title="YouTube player"
+            frameborder="0"
+            allow="autoplay"
+            class="iframe-styled"
+            aria-label="YouTube Video Player"
+        ></iframe>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="widget-controls">
+        <button id="toggle-playback" class="control-button" aria-pressed="false">
+            <span id="play-icon" class="icon-visible">{{ partial "icon/youtube-widget/start.html" . }}</span>
+            <span id="pause-icon" class="hidden">{{ partial "icon/youtube-widget/stop.html" . }}</span>
+        </button>
+
+        <button id="toggle-visibility" class="control-button" aria-pressed="false">
+            <span id="hide-icon" class="icon-visible">{{ partial "icon/youtube-widget/hide-video.html" . }}</span>
+            <span id="show-icon" class="hidden">{{ partial "icon/youtube-widget/show-video.html" . }}</span>
+        </button>
+
+        <button id="toggle-input-visibility" class="control-button" aria-pressed="false">
+            <span id="hide-input-icon" class="icon-visible">{{ partial "icon/youtube-widget/hide-input.html" . }}</span>
+            <span id="show-input-icon" class="hidden">{{ partial "icon/youtube-widget/show-input.html" . }}</span>
+        </button>
+
+        <button id="toggle-loop" class="control-button" aria-pressed="false">
+            <span id="enable-loop-icon" class="icon-visible">{{ partial "icon/youtube-widget/enable-loop.html" . }}</span>
+            <span id="disable-loop-icon" class="hidden">{{ partial "icon/youtube-widget/disable-loop.html" . }}</span>
+        </button>
+    </div>
+
+    <!-- Volume Slider -->
+    <div class="widget-slider">
+        <label for="volume-slider" class="sr-only">Volume Control</label>
+        <input
+            id="volume-slider"
+            type="range"
+            min="0"
+            max="100"
+            value="100"
+            class="slider"
+            aria-label="Volume Control"
+        />
+    </div>
+</div>
+
+<script src="{{ $built.RelPermalink }}"></script>
+
+<style>
+/* CSS Variables for Light/Dark Modes */
+:root {
+    --bg-color: #f9fafb;
+    --border-color: #d1d5db;
+    --hover-bg: #e5e7eb;
+}
+
+.dark {
+    --bg-color: #1e293b;
+    --border-color: #374151;
+    --hover-bg: #4b5563;
+    --text-title-color: #f3f4f6; /* Light gray for dark mode */
+    --text-description-color: #d1d5db; /* Softer gray for dark mode */
+}
+
+/* Component Styles */
+.youtube-widget {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.widget-input, .widget-player, .widget-controls, .widget-slider {
+    margin-bottom: 4px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+}
+
+.iframe-styled {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.control-button {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+}
+
+.control-button:hover {
+    background-color: var(--hover-bg);
+}
+
+.icon-visible {
+    display: inline;
+}
+
+.hidden {
+    display: none;
+}
+
+.slider {
+    width: 100%;
+}
+
+.youtube-title {
+    font-weight: bold;
+    font-size: 1rem; /* Adjust font size */
+    color: #1f2937; /* Dark gray */
+    text-align: center; /* Center align */
+    margin-bottom: 0.5rem;
+}
+
+.youtube-description {
+    font-size: 0.875rem; /* Small text size */
+    color: #6b7280; /* Light gray */
+    line-height: 1.5; /* Improve readability */
+    text-align: justify; /* Justify text */
+}
+
+/* Dark mode styles */
+.dark .youtube-title {
+    color: #f3f4f6; /* Light gray for dark mode */
+}
+
+.dark .youtube-description {
+    color: #d1d5db; /* Softer gray for dark mode */
+}
+
+</style>
