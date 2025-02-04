@@ -7,7 +7,6 @@ theme = 'digitalgarden'
 
 [Params]
   description = "hwan001`s blog"
-  favicon = "/images/favicon.ico"
   images = ['/images/main-logo.png']
   enableSearch = true
 
@@ -37,13 +36,13 @@ theme = 'digitalgarden'
   params.header = true
   weight = 2
 [[menu.main]]
+  name = 'CS'
+  url = '/cs'
+  weight = 3
+[[menu.main]]
   name = 'NextJS'
   url = '/nextjs'
   weight = 3
-[[menu.main]]
-  name = 'Post'
-  url = '/post'
-  weight = 4
 [[menu.main]]
   name = 'Python'
   url = '/python'

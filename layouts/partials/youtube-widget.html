@@ -12,11 +12,12 @@
 
     <!-- Input Field -->
     <div class="widget-input">
+        <label for="youtube-id" class="sr-only">Enter YouTube Video ID</label>
         <input
             id="youtube-id"
             type="text"
             class="input-field"
-            placeholder="Enter YouTube Video ID (e.g., jNQXAC9IVRw)"
+            placeholder="Enter YouTube Video ID (e.g., 6xpBoLetha0)"
             aria-label="YouTube Video ID Input"
         />
     </div>
@@ -26,8 +27,9 @@
         <iframe
             id="youtube-player"
             title="YouTube player"
+            src="https://www.youtube.com/embed/?enablejsapi=1"
             frameborder="0"
-            allow="autoplay"
+            allow="autoplay; encrypted-media; picture-in-picture"
             class="iframe-styled"
             aria-label="YouTube Video Player"
         ></iframe>
@@ -36,23 +38,27 @@
     <!-- Control Panel -->
     <div class="widget-controls">
         <button id="toggle-playback" class="control-button" aria-pressed="false">
-            <span id="play-icon" class="icon-visible">{{ partial "icon/youtube-widget/start.html" . }}</span>
-            <span id="pause-icon" class="hidden">{{ partial "icon/youtube-widget/stop.html" . }}</span>
+            <span id="play-icon" class="hidden" aria-hidden="true">{{ partial "icon/youtube-widget/start.html" . }}</span>
+            <span id="pause-icon" class="icon-visible" aria-hidden="true">{{ partial "icon/youtube-widget/stop.html" . }}</span>
+            <span class="sr-only">Play/Pause Video</span>
         </button>
 
         <button id="toggle-visibility" class="control-button" aria-pressed="false">
-            <span id="hide-icon" class="icon-visible">{{ partial "icon/youtube-widget/hide-video.html" . }}</span>
-            <span id="show-icon" class="hidden">{{ partial "icon/youtube-widget/show-video.html" . }}</span>
+            <span id="hide-icon" class="icon-visible" aria-hidden="true">{{ partial "icon/youtube-widget/hide-video.html" . }}</span>
+            <span id="show-icon" class="hidden" aria-hidden="true">{{ partial "icon/youtube-widget/show-video.html" . }}</span>
+            <span class="sr-only">Toggle Video Visibility</span>
         </button>
 
         <button id="toggle-input-visibility" class="control-button" aria-pressed="false">
-            <span id="hide-input-icon" class="icon-visible">{{ partial "icon/youtube-widget/hide-input.html" . }}</span>
-            <span id="show-input-icon" class="hidden">{{ partial "icon/youtube-widget/show-input.html" . }}</span>
+            <span id="hide-input-icon" class="icon-visible" aria-hidden="true">{{ partial "icon/youtube-widget/hide-input.html" . }}</span>
+            <span id="show-input-icon" class="hidden" aria-hidden="true">{{ partial "icon/youtube-widget/show-input.html" . }}</span>
+            <span class="sr-only">Toggle Input Visibility</span>
         </button>
 
         <button id="toggle-loop" class="control-button" aria-pressed="false">
-            <span id="enable-loop-icon" class="icon-visible">{{ partial "icon/youtube-widget/enable-loop.html" . }}</span>
-            <span id="disable-loop-icon" class="hidden">{{ partial "icon/youtube-widget/disable-loop.html" . }}</span>
+            <span id="enable-loop-icon" class="icon-visible" aria-hidden="true">{{ partial "icon/youtube-widget/enable-loop.html" . }}</span>
+            <span id="disable-loop-icon" class="hidden" aria-hidden="true">{{ partial "icon/youtube-widget/disable-loop.html" . }}</span>
+            <span class="sr-only">Toggle Loop</span>
         </button>
     </div>
 
@@ -66,7 +72,7 @@
             max="100"
             value="100"
             class="slider"
-            aria-label="Volume Control"
+            aria-label="Volume"
         />
     </div>
 </div>

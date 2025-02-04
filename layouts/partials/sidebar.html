@@ -5,13 +5,16 @@
       class="md:hidden menu-trigger-close p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700">
       {{- partial "icon/closeIcon.html" . -}}
     </button>
+
     <a href="{{ .Site.BaseURL }}" class="px-2">
       <span>{{ .Site.Title }}</span>
     </a>
+
     <button aria-label="Toggle dark mode"
       class="dark-mode-toggle p-2 rounded border dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700">
       {{- partial "icon/sunIcon.html" . -}}
     </button>
+    
   </p>
 
   {{ $permalink := cond (eq (len .RelPermalink) 1) .RelPermalink (strings.TrimRight "/" .RelPermalink) }}
@@ -51,7 +54,7 @@
         {{ if eq .Name "Twitter" }}
         <span>{{- partial "icon/twitterIcon.html" . -}}</span>
         {{ else if eq .Name "Codeberg" }}
-        <span>{{- partial "icon/codebergIcon.html" . -}}</span>
+        <span>{{- partial "icon/codebergIcon.html" . -}}</span>x
         {{ else if eq .Name "GitHub" }}
         <span>{{- partial "icon/githubIcon.html" . -}}</span>
         {{ else if eq .Name "GitLab" }}

@@ -5,9 +5,9 @@
 {{ $lastmod := .Lastmod.Format "January 2, 2006" }}
 
 <div class="flex flex-1 h-screen relative w-full min-w-0">
-
   <section
-    class="will-change-transform transform transition-transform -translate-x-[200%] absolute top-0 left-0 lg:relative
+    id="post-section"
+    class="post-section will-change-transform transform transition-transform -translate-x-[200%] absolute top-0 left-0 lg:relative
   lg:translate-x-0 lg:basis-[400px] h-full bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 lg:flex flex-col py-3 overflow-y-auto scroll-area flex-shrink-0">
     {{$Section := .Site.GetPage "section" .Section }}
     {{ with $Section }}
@@ -36,6 +36,14 @@
     </div>
     {{ end -}}
   </section>
+
+<button aria-label="Toggle sidebar section" 
+  class="toggle-section-btn lg:hidden p-1 dark:text-white rounded border dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700" 
+  data-target="post-section">
+  <span class="section-show-icon" aria-hidden="true">{{ partial "icon/left.html" . }}</span>
+  <span class="section-hide-icon hidden" aria-hidden="true">{{ partial "icon/right.html" . }}</span>
+</button>
+
 
   <div class="overflow-y-auto h-screen w-full">
     <article class="px-6 py-20 w-full mx-auto prose lg:prose-lg h-fit dark:prose-invert prose-img:mx-auto">

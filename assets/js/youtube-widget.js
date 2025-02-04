@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         youtubeAudioTimeKey: 'youtubeAudioTime',
     };
 
-    const defaultVideoID = 'jNQXAC9IVRw';
+    const defaultVideoID = '6xpBoLetha0';
     let timeUpdateInterval;
     let isPlaying = false; // 재생 상태
 
@@ -41,16 +41,65 @@ document.addEventListener('DOMContentLoaded', () => {
                     func: command,
                     args: args,
                 }),
-                '*'
+                '*' // 명시적 origin 설정
             );
+        } else {
+            console.error("Iframe window not available!");
         }
     };
 
-    // Initialize player
+    // 디버깅용 로그 추가
+    window.addEventListener('message', (event) => {
+        console.log('Message event received:', event);
+        console.log('Event origin:', event.origin);
+        console.log('Event data:', event.data);
+    });
+
+    // iframe으로부터 메시지 처리
+    // window.addEventListener('message', (event) => {
+    //     let data;
+    //     try {
+    //         data = JSON.parse(event.data);
+    //         console.log("Message received from YouTube:", data);
+    //     } catch (err) {
+    //         console.error("Error parsing message data:", event.data);
+    //         return;
+    //     }
+    //
+    //     // currentTime 업데이트
+    //     if (data.event === 'infoDelivery' && data.info && typeof data.info.currentTime !== 'undefined') {
+    //         const currentTime = data.info.currentTime;
+    //         console.log(`Current time received: ${currentTime}`);
+    //         localStorage.setItem(storageKeys.youtubeAudioTimeKey, currentTime);
+    //     } else {
+    //         console.warn("Message does not contain currentTime:", data);
+    //     }
+    // });
+
+
+    // Initialize player using YouTube API
     const initializePlayer = () => {
         const savedID = localStorage.getItem(storageKeys.localStorageKey) || defaultVideoID;
         const savedTime = parseFloat(localStorage.getItem(storageKeys.youtubeAudioTimeKey)) || 0;
-        domElements.player.src = `https://www.youtube.com/embed/${savedID}?playlist=${savedID}&autoplay=1&loop=1&enablejsapi=1&start=${savedTime}`;
+
+        // YouTube IFrame Player 초기화
+        const player = new YT.Player(domElements.player.id, {
+            videoId: savedID,
+            playerVars: {
+                autoplay: 1,
+                loop: 1,
+                enablejsapi: 1,
+                playlist: savedID,
+                start: savedTime,
+            },
+            events: {
+                onReady: () => {
+                    console.log("YouTube player is ready.");
+                    // 주기적으로 현재 시간을 요청
+                    timeUpdateInterval = setInterval(() => postMessageToPlayer('getCurrentTime'), 1000);
+                },
+            },
+        });
         domElements.input.value = savedID;
     };
 
@@ -60,9 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem(storageKeys.localStorageKey, videoID);
         localStorage.setItem(storageKeys.youtubeAudioTimeKey, 0); // 재생 시간 초기화
     };
-
-    // Save current playback time
-    const saveCurrentTime = () => postMessageToPlayer('getCurrentTime');
 
     // Initialize visibility for input and iframe
     const initializeVisibility = () => {
@@ -144,11 +190,17 @@ document.addEventListener('DOMContentLoaded', () => {
     domElements.volumeSlider.addEventListener('input', handleVolumeChange);
     domElements.loopButton.addEventListener('click', toggleLoop);
 
+    // Load YouTube IFrame API script
+    const loadYouTubeAPI = () => {
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    };
+
+    loadYouTubeAPI();
+
     // Initialize on page load
-    initializePlayer();
     initializeVisibility();
     initializeLoopState();
-
-    // Periodically save playback time
-    timeUpdateInterval = setInterval(saveCurrentTime, 1000);
 });

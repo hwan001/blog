@@ -1,3 +1,3 @@
 ---
-title: nextjs
+title: NextJS
 ---
