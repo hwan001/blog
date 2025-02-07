@@ -36,37 +36,29 @@ theme = 'digitalgarden'
   params.header = true
   weight = 2
 [[menu.main]]
-  name = 'CS'
-  url = '/cs'
+  name = 'Posting'
+  url = '/posting'
   weight = 3
-[[menu.main]]
-  name = 'NextJS'
-  url = '/nextjs'
-  weight = 3
-[[menu.main]]
-  name = 'Python'
-  url = '/python'
-  weight = 4
 [[menu.main]]
   name = 'Project'
   url = '/project'
-  weight = 5
+  weight = 4
 [[menu.main]]
   name = 'Projects'
   params.header = true
-  weight = 6
+  weight = 5
 [[menu.main]]
   name = 'Starsinflation'
   url = 'https://starsinflation.xyz'
-  weight = 7
+  weight = 6
 [[menu.main]]
   name = 'Team'
   params.header = true
-  weight = 8
+  weight = 7
 [[menu.main]]
   name = '666lab'
   url = 'https://666lab.github.io'
-  weight = 9
+  weight = 8
 
 # [[menu.social]]
 #   name = 'Twitter'

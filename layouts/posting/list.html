@@ -1,0 +1,134 @@
+{{ define "main" }}
+
+{{ $permalink := .RelPermalink }}
+{{ $date := .Date.Format "January 2, 2006" }}
+{{ $lastmod := .Lastmod.Format "January 2, 2006" }}
+
+{{ $section := .Section }}
+{{ $currentPath := .File.Dir }}
+{{ $subSection := (index (split $currentPath "/") 1) }}
+
+{{ $rootPage := .Site.GetPage "posting" $section}}
+
+{{ $sectionPage := .Site.GetPage (printf "posting/%s" $subSection) }}
+{{ $postingPage := .Site.GetPage "section" "posting" }}
+
+{{ $count := len $sectionPage.Pages }}
+{{ $postingCount := len $postingPage.Pages }}
+
+
+<div class="flex flex-1 h-screen relative w-full min-w-0">   
+  <!-- 섹션 -->
+  <section
+    id="post-section"
+    class="post-section w-full h-full border-r border-slate-200 flex flex-col py-3 overflow-y-auto scroll-area flex-shrink-0
+        md:min-w-[380px] md:w-1/4 bg-slate-50 dark:bg-slate-800 dark:border-slate-700 ">
+        
+    <a href="{{ $postingPage.Permalink }}">
+      <h2 class="font-bold mb-5 py-1 pl-12 pr-3 md:px-3">{{ $sectionPage.Title }} ({{ $count }})</h2>
+    </a>
+    
+    {{- partial "search.html" . -}}
+
+    <div class="space-y-2.5">
+      {{ range $sectionPage.Pages -}}
+        {{ $isCurrentPage := eq .RelPermalink $permalink }}
+        <a class="article block px-3 py-4 {{ if $isCurrentPage }} bg-slate-900 dark:bg-slate-700 text-slate-50 {{ else }} hover:bg-slate-200 dark:hover:bg-slate-700 {{ end }}"
+          href="{{ .RelPermalink }}">
+
+          {{ $count := len .Pages }} 
+          {{ $title := .Params.title }}
+
+          {{ with .Params.images }}
+            {{- range first 1 . }}
+            <img class="rounded max-w-full mb-4" src="{{ . }}" alt="{{ $title }}" />
+            {{ end -}}
+          {{ end }}
+
+          <h3 class="text-lg font-semibold mb-0.5">
+            {{ .Title }} {{ if eq $count 0 }} {{ else }} ({{ $count }}) {{ end }} 
+          </h3>
+
+          <div
+            class="text-sm {{ if $isCurrentPage }} text-slate-400 {{ else }} text-slate-500 dark:text-slate-400 {{ end }} line-clamp-2">
+            {{/* .Summary */}}
+            {{.Params.descriptions}}
+          </div>
+        </a>
+      {{ end -}}
+    </div>
+  </section>
+
+  <!-- 섹션 토글 버튼 -->
+  <button aria-label="Toggle sidebar section" 
+    class="toggle-section-btn lg:hidden p-1 dark:text-white border dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700" 
+    data-target="post-section">
+    <span class="section-show-icon" aria-hidden="true">{{ partial "icon/left.html" . }}</span>
+    <span class="section-hide-icon hidden" aria-hidden="true">{{ partial "icon/right.html" . }}</span>
+  </button>
+
+  <div class="overflow-y-auto h-screen w-full">
+    <article class="px-6 py-10 w-full mx-auto prose lg:prose-lg h-fit dark:prose-invert prose-img:mx-auto">
+      {{ $title := .Params.title }} 
+      
+      <!-- 상위 카테고리 표시 -->
+      <h2 class="font-bold mb-5">
+        {{ index .Params.categories 0}}
+        {{ with index .Params.categories 1 }}/{{ . }}{{ end }}
+      </h2>
+
+      <!-- 글 제목 -->
+      <h1 class="!mb-2">{{ $title }}</h1>
+
+      <!-- 날짜 -->
+	    {{ if .Date }}
+        <p class="text-sm text-slate-500 !mb-8"> Planted {{ $date }}
+		      {{ if ne $lastmod $date}}
+		  	    <br/> Pruned {{ .Lastmod.Format "January 2, 2006" }}
+          {{ end }}
+	      </p>
+      {{ end }}
+
+      <!-- 이미지 -->
+      {{ with .Params.images }}
+        {{- range first 1 . }}
+          <img class="rounded max-w-full mx-auto mb-4" src="{{ . }}" alt="{{ $title }}" />
+        {{ end -}}
+      {{ end }}
+
+      <!-- 글 내용 -->
+      {{ .Content }}
+    </article>
+
+    
+    <!-- 현재 카테고리의 다른 글들 테이블 -->
+    {{ if gt $count 0 }}
+      <div class="px-6 w-full mx-auto prose lg:prose-lg h-fit dark:prose-invert prose-img:mx-auto">
+        <h4 class="text-xl font-bold mb-4">
+          '<a href="{{ $sectionPage.Permalink }}" class="text-blue-500 hover:underline">{{ $sectionPage.Title }}</a>' 카테고리의 다른 글
+        </h4>
+
+        <table>
+          <tbody>
+            {{ range $sectionPage.Pages }}
+              {{ if ne .RelPermalink $permalink }} <!-- 현재 글 제외 -->
+              <tr class="border-b border-gray-200 dark:border-gray-700">
+                <td class="py-3 px-6">
+                  <a href="{{ .RelPermalink }}" class="text-blue-600 dark:text-blue-400 hover:underline">
+                    {{ .Params.title }} {{ if eq (len .Data.Pages) 0}} {{else}} ({{len .Data.Pages}}) {{end}}
+                  </a>
+                </td>
+                <td>{{ .Params.descriptions }}</td>
+                <td>{{ .Date.Format "2006.01.02" }}</td>
+              </tr>
+              {{ end }}
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    {{ end }}
+
+  </div>
+</div>
+
+{{ end }}
