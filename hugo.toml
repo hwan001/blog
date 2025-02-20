@@ -1,4 +1,5 @@
-baseURL = 'https://hwan001.github.io'
+# baseURL = 'https://hwan001.github.io'
+baseURL = 'http://localhost:1313'
 languageCode = 'en-us'
 title = 'hwan001'
 theme = 'digitalgarden'
@@ -38,6 +39,7 @@ theme = 'digitalgarden'
 [[menu.main]]
   name = 'Posting'
   url = '/posting'
+  params.subdirectories = true
   weight = 3
 [[menu.main]]
   name = 'Project'

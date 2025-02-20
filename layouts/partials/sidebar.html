@@ -1,5 +1,4 @@
-<aside
-  class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:basis-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar flex-shrink-0">
+<aside class="will-change-transform transform transition-transform -translate-x-full absolute top-0 left-0 md:relative md:translate-x-0 w-3/4 md:basis-60 h-full min-h-screen p-3 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 z-20 sidebar flex-shrink-0">
   <p class="font-bold mb-5 flex items-center gap-2">
     <button aria-label="Close sidebar"
       class="md:hidden menu-trigger-close p-1 rounded text-slate-800 dark:text-slate-50 hover:bg-slate-200 dark:hover:bg-slate-700">
@@ -14,23 +13,51 @@
       class="dark-mode-toggle p-2 rounded border dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700">
       {{- partial "icon/sunIcon.html" . -}}
     </button>
-    
   </p>
+
+  {{ $site := .Site }} <!-- .Site를 별도 변수로 저장 -->
 
   {{ $permalink := cond (eq (len .RelPermalink) 1) .RelPermalink (strings.TrimRight "/" .RelPermalink) }}
   <ul class="list-none flex flex-col gap-1">
     {{ range .Site.Menus.main }}
     <li>
-      <a class="px-2 py-1.5 rounded-md text-sm flex items-center justify-between {{ if .Params.Header }} text-slate-400 font-semibold pb-0 pl-1 border-b cursor-default pointer-events-none {{ else if eq .URL $permalink }} bg-slate-800 text-white dark:bg-slate-50 dark:text-slate-800 dark:selection:bg-slate-400 {{ else }} hover:bg-slate-200 dark:hover:bg-slate-700 {{ end }}"
-        href="{{ if .URL }}{{ .URL }}{{ else }}#{{ end }}" {{ if strings.HasPrefix .URL "http" }} target="_blank"
-        rel="noopener" {{ end }}>
-        <span>{{ .Name }}</span>
-        {{ if strings.HasPrefix .URL "http" }}
-        <span>
-          {{- partial "icon/externalIcon.html" . -}}
-        </span>
+      <div class="flex items-center">
+        {{ if .Params.subdirectories }}
+        <button class="toggle-submenu px-2 py-1.5 text-sm font-semibold text-gray-600 dark:text-gray-300">▶</button>
         {{ end }}
-      </a>
+        <a class="px-2 py-1.5 rounded-md text-sm flex-grow flex items-center justify-between
+          {{ if .Params.Header }} text-slate-400 font-semibold pb-0 pl-1 border-b cursor-default pointer-events-none 
+          {{ else if eq .URL $permalink }} bg-slate-800 text-white dark:bg-slate-50 dark:text-slate-800 dark:selection:bg-slate-400 
+          {{ else }} hover:bg-slate-200 dark:hover:bg-slate-700 {{ end }}"
+          href="{{ if .URL }}{{ .URL }}{{ else }}#{{ end }}" 
+          {{ if strings.HasPrefix .URL "http" }} target="_blank" rel="noopener" {{ end }}>
+          <span>{{ .Name }}</span>
+        </a>
+      </div>
+
+      {{ if .Params.subdirectories }}
+      {{ $cleanURL := replaceRE "^/" "" .URL }}  <!-- URL 정리 -->
+      {{ $section := site.GetPage $cleanURL }}
+
+      {{ if $section }}
+      <ul class="submenu hidden pl-4" data-menu-id="{{ $section.RelPermalink }}">
+        {{ range $section.Pages }}
+        {{ if .IsSection }}
+        
+        {{ $sectionPages := .Pages }}  <!-- 직접 해당 섹션의 페이지 가져오기 -->
+        {{ $pageCount := len $sectionPages }}  <!-- 페이지 수 계산 -->
+
+        <li>
+          <a href="{{ .RelPermalink }}" class="block px-2 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">
+            - {{ .Title }} ({{ $pageCount }})
+          </a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+      {{ end }}
+      {{ end }}
+
     </li>
     {{ end }}
   </ul>
@@ -51,39 +78,14 @@
       <a class="px-2 py-1.5 rounded-md text-sm block text-slate-800 dark:text-slate-50 {{ if eq (.URL|absURL) $permalink }} bg-slate-800 text-white dark: {{ else }} hover:bg-slate-200 dark:hover:bg-slate-700 {{ end }}"
         href="{{ .URL }}" target="_blank" rel="noopener noreferrer">
         <span class="sr-only">{{ .Name }}</span>
-        {{ if eq .Name "Twitter" }}
-        <span>{{- partial "icon/twitterIcon.html" . -}}</span>
-        {{ else if eq .Name "Codeberg" }}
-        <span>{{- partial "icon/codebergIcon.html" . -}}</span>x
-        {{ else if eq .Name "GitHub" }}
-        <span>{{- partial "icon/githubIcon.html" . -}}</span>
-        {{ else if eq .Name "GitLab" }}
-        <span>{{- partial "icon/gitlabIcon.html" . -}}</span>
-        {{ else if eq .Name "LinkedIn" }}
-        <span>{{- partial "icon/linkedinIcon.html" . -}}</span>
-        {{ else if eq .Name "Mastodon" }}
-        <span>{{- partial "icon/mastodonIcon.html" . -}}</span>
-        {{ else if eq .Name "Instagram" }}
-        <span>{{- partial "icon/instagramIcon.html" . -}}</span>
-        {{ else if eq .Name "Dribbble" }}
-        <span>{{- partial "icon/dribbbleIcon.html" . -}}</span>
-        {{ else if eq .Name "Codepen" }}
-        <span>{{- partial "icon/codepenIcon.html" . -}}</span>
-        {{ else if eq .Name "Twitch" }}
-        <span>{{- partial "icon/twitchIcon.html" . -}}</span>
-        {{ else if eq .Name "Email" }}
-        <span>{{- partial "icon/emailIcon.html" . -}}</span>
-        {{ else if eq .Name "RSS" }}
-        <span>{{- partial "icon/rssfeedIcon.html" . -}}</span>
-        {{ end }}
+        {{- partial (printf "icon/%sIcon.html" (lower .Name)) . -}}
       </a>
     </li>
     {{ end }}
   </ul>
 </aside>
 
-<div
-  class="fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay">
+<div class="fixed bg-slate-700 bg-opacity-5 transition duration-200 ease-in-out inset-0 z-10 pointer-events-auto md:hidden left-0 top-0 w-full h-full hidden menu-overlay">
 </div>
 
 <button aria-label="Toggle Sidebar"

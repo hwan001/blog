@@ -1,0 +1,12 @@
+.submenu {
+}
+
+.hidden {
+    display: none;
+}
+
+.toggle-submenu {
+    cursor: pointer;
+    background: none;
+    border: none;
+}

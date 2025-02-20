@@ -55,7 +55,8 @@ darkModeToggle.addEventListener('click', () => {
 
 /** Section Show/ Hide Toggle */
 const storageKeys = {
-    sectionHiddenKeyPrefix: 'sectionHiddenState_'
+    sectionHiddenKeyPrefix: 'sectionHiddenState_',
+    sidebarStateKey: "sidebar-submenu-state"
 };
 
 document.querySelectorAll('.toggle-section-btn').forEach((button) => {
@@ -82,4 +83,31 @@ document.querySelectorAll('.toggle-section-btn').forEach((button) => {
     button.addEventListener('click', togglePostSection);
 
     syncStateWithStorage();
+});
+
+
+/** Sidebar Submenu Toggle with LocalStorage */
+const storedState = JSON.parse(localStorage.getItem(storageKeys.sidebarStateKey)) || {}; // 기존 상태 불러오기
+
+document.querySelectorAll(".toggle-submenu").forEach((button) => {
+  const submenu = button.parentElement.nextElementSibling;
+  const menuId = submenu ? submenu.getAttribute("data-menu-id") : null;
+
+  const syncStateWithStorage = () => {
+      const isHidden = storedState[menuId] || false;
+      submenu.classList.toggle("hidden", isHidden);
+      button.textContent = isHidden ? "▶" : "▼";
+  };
+
+  const toggleSubmenu = () => {
+      const isHidden = submenu.classList.toggle("hidden");
+      storedState[menuId] = isHidden;
+      localStorage.setItem(storageKeys.sidebarStateKey, JSON.stringify(storedState));
+      syncStateWithStorage();
+  };
+
+  if (menuId) {
+      syncStateWithStorage(); // 페이지 로드 시 상태 동기화
+      button.addEventListener("click", toggleSubmenu);
+  }
 });
